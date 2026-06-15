@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mariana Ferreira | Psicologia Clínica</title>
+<meta name="description" content="Psicóloga clínica especializada em TCC e Terapia Familiar. Acompanhamento ético, humanizado e cientificamente fundamentado para adultos, casais e famílias."/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-secondary-container":"#526771","background":"#fbf9f6","on-tertiary-fixed-variant":"#683c0a",
+          "surface-container-lowest":"#ffffff","primary-fixed-dim":"#b4cdb4","secondary-container":"#cfe6f2",
+          "outline-variant":"#c3c8c0","surface-tint":"#4d6450","tertiary":"#845321",
+          "surface-container-low":"#f5f3f0","on-primary-container":"#223725","surface-variant":"#e3e2df",
+          "on-primary-fixed-variant":"#364c39","surface-bright":"#fbf9f6","secondary-fixed-dim":"#b4cad5",
+          "on-tertiary":"#ffffff","on-primary":"#ffffff","on-secondary":"#ffffff",
+          "on-surface-variant":"#434842","surface":"#fbf9f6","surface-container":"#efeeea",
+          "on-tertiary-fixed":"#2d1600","on-background":"#1b1c1a","surface-container-highest":"#e3e2df",
+          "error":"#ba1a1a","primary-container":"#88a089","surface-dim":"#dbdad7",
+          "on-primary-fixed":"#0b2010","on-secondary-fixed-variant":"#354a53",
+          "inverse-on-surface":"#f2f1ed","tertiary-fixed":"#ffdcc0","error-container":"#ffdad6",
+          "on-surface":"#1b1c1a","on-error-container":"#93000a","on-tertiary-container":"#4d2900",
+          "primary-fixed":"#d0e9cf","primary":"#4d6450","inverse-surface":"#30312f",
+          "tertiary-fixed-dim":"#fab97e","on-secondary-fixed":"#081e27","inverse-primary":"#b4cdb4",
+          "secondary-fixed":"#cfe6f2","secondary":"#4c616b","surface-container-high":"#e9e8e5",
+          "outline":"#737972","on-error":"#ffffff","tertiary-container":"#c88d56"
+        },
+        borderRadius: {
+          "DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","3xl":"1.5rem","full":"9999px"
+        },
+        spacing: {
+          "container-max":"1140px"
+        },
+        fontFamily: {
+          "serif":["Playfair Display","Georgia","serif"],
+          "sans":["Manrope","system-ui","sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  /* ── Design tokens ─────────────────────────────────────────── */
+  :root {
+    /* Fluid type: clamp(min, preferred, max) */
+    --t-display: clamp(1.75rem, 2.8vw + 1rem, 3rem);        /* 28 → 48px */
+    --t-h1:      clamp(1.5rem,  2vw  + 0.9rem, 2.375rem);   /* 24 → 38px */
+    --t-h2:      clamp(1.2rem,  1.2vw + 0.8rem, 1.75rem);   /* ~19 → 28px */
+    --t-body:    clamp(0.9375rem, 0.4vw + 0.8rem, 1.125rem);/* 15 → 18px */
+    --t-label:   0.75rem;
+
+    /* Fluid space */
+    --s-section-v: clamp(3rem, 7.5vw, 6.25rem);   /* 48 → 100px vertical */
+    --s-section-h: clamp(1.25rem, 7vw, 6.25rem);  /* 20 → 100px horizontal */
+    --s-gap:       clamp(1rem, 3vw, 1.5rem);
+
+    /* Colors shorthand */
+    --c-primary: #4d6450;
+    --c-bg: #fbf9f6;
+  }
+
+  /* ── Reset & Base ──────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: "Manrope", system-ui, sans-serif; background: var(--c-bg); color: #1b1c1a; -webkit-text-size-adjust: 100%; }
+  img { display: block; max-width: 100%; height: auto; }
+  a, button { -webkit-tap-highlight-color: transparent; }
+  ::selection { background: #88a089; color: #0b2010; }
+
+  /* ── Focus ──────────────────────────────────────────────────── */
+  :focus-visible {
+    outline: 2px solid var(--c-primary);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  :focus:not(:focus-visible) { outline: none; }
+
+  /* ── Material icons ─────────────────────────────────────────── */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    user-select: none;
+  }
+
+  /* ── Organic background ─────────────────────────────────────── */
+  .organic-bg {
+    background-image:
+      radial-gradient(circle at 100% 0%,   rgba(180,205,180,0.06) 0%, transparent 50%),
+      radial-gradient(circle at 0%   100%, rgba(225,232,235,0.22) 0%, transparent 50%);
+  }
+
+  /* ── Shadows ────────────────────────────────────────────────── */
+  .ambient-shadow    { box-shadow: 0 8px 36px -8px rgba(77,100,80,0.09); }
+  .ambient-shadow-lg { box-shadow: 0 18px 56px -14px rgba(77,100,80,0.13); }
+
+  /* ── Scroll margin (sticky header offset 64px) ──────────────── */
+  section[id] { scroll-margin-top: 64px; }
+
+  /* ── Watermarks ─────────────────────────────────────────────── */
+  .mf-floral-watermark {
+    position: absolute; width: min(44vw, 580px); aspect-ratio: 1;
+    background: url("./assets/mf-fundo.jpg") left bottom / contain no-repeat;
+    opacity: 0.22; pointer-events: none; mix-blend-mode: multiply;
+  }
+  .mf-logo-watermark {
+    position: absolute; width: min(32vw, 400px); aspect-ratio: 1;
+    background: url("./assets/mf-submarca.png") center / contain no-repeat;
+    opacity: 0.10; pointer-events: none; mix-blend-mode: multiply;
+  }
+  @media (max-width: 767px) {
+    .mf-floral-watermark { width: 200px; opacity: 0.11; }
+    .mf-logo-watermark   { width: 160px; opacity: 0.07; }
+  }
+
+  /* ── Header ─────────────────────────────────────────────────── */
+  #site-header { transition: transform 0.3s ease; }
+
+  /* ── Mobile menu ────────────────────────────────────────────── */
+  #mobile-menu {
+    max-height: 0; overflow: hidden; opacity: 0;
+    transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1), opacity 0.28s ease;
+  }
+  #mobile-menu.open { max-height: 560px; opacity: 1; }
+
+  /* ── Carousel — desktop: auto-scroll ────────────────────────── */
+  .reflection-carousel {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  }
+  .reflection-track {
+    display: flex; gap: 28px; width: max-content;
+    animation: carousel-scroll 54s linear infinite;
+  }
+  .reflection-carousel:hover .reflection-track,
+  .reflection-carousel:focus-within .reflection-track { animation-play-state: paused; }
+  @keyframes carousel-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-50% - 14px)); }
+  }
+
+  /* ── Carousel — mobile: native snap scroll ────────────────── */
+  @media (max-width: 767px) {
+    .reflection-carousel {
+      overflow-x: auto;
+      overflow-y: visible;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+    .reflection-carousel::-webkit-scrollbar { display: none; }
+    .reflection-track {
+      animation: none !important;
+      width: auto;
+      gap: 14px;
+      padding: 4px 20px 12px;
+    }
+    .reflection-track > [aria-hidden="true"] { display: none !important; }
+    .reflection-track > * {
+      scroll-snap-align: start;
+      flex: 0 0 min(78vw, 290px) !important;
+      width: min(78vw, 290px) !important;
+    }
+  }
+
+  /* ── Scroll-triggered fade-up ───────────────────────────────── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-up.in          { opacity: 1; transform: translateY(0); }
+  .fade-up.delay-1     { transition-delay: 0.12s; }
+  .fade-up.delay-2     { transition-delay: 0.24s; }
+  .fade-up.delay-3     { transition-delay: 0.36s; }
+
+  /* ── Reduced motion ─────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-up { opacity: 1; transform: none; transition: none; }
+    .reflection-track { animation: none !important; }
+    *, *::before, *::after {
+      animation-duration:       0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration:      0.01ms !important;
+    }
+  }
+
+  /* ── "Sobre" read-more (mobile collapse) ─────────────────────── */
+  .sobre-extra {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.52s ease;
+  }
+  .sobre-extra.expanded { max-height: 2400px; }
+  @media (min-width: 768px) {
+    .sobre-extra { max-height: none !important; overflow: visible; }
+    #sobre-toggle { display: none !important; }
+  }
+
+  /* ── Utility: min touch target ───────────────────────────────── */
+  .touch-target {
+    min-height: 44px;
+    min-width:  44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Pill button base ────────────────────────────────────────── */
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--c-primary); color: #fff;
+    padding: 0.875rem 1.75rem; border-radius: 9999px;
+    font-family: "Manrope", sans-serif; font-size: 0.75rem;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+    transition: background 0.28s, transform 0.2s, box-shadow 0.28s;
+    min-height: 52px; white-space: nowrap;
+  }
+  .btn-primary:hover  { background: #3a4f3d; box-shadow: 0 8px 24px rgba(77,100,80,0.28); }
+  .btn-primary:active { transform: scale(0.97); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: transparent; color: var(--c-primary);
+    border: 1.5px solid #c3c8c0;
+    padding: 0.875rem 1.75rem; border-radius: 9999px;
+    font-family: "Manrope", sans-serif; font-size: 0.75rem;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+    transition: background 0.28s, border-color 0.28s;
+    min-height: 52px; white-space: nowrap;
+  }
+  .btn-outline:hover { background: rgba(77,100,80,0.05); border-color: var(--c-primary); }
+
+  /* ── Service card hover ──────────────────────────────────────── */
+  .service-card {
+    transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94),
+                box-shadow 0.45s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px -12px rgba(77,100,80,0.16);
+  }
+  @media (hover: none) { .service-card:hover { transform: none; box-shadow: none; } }
+
+  /* ── Article card hover ──────────────────────────────────────── */
+  .article-card {
+    transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94),
+                box-shadow 0.45s ease;
+  }
+  .article-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px -10px rgba(77,100,80,0.14);
+  }
+  @media (hover: none) { .article-card:hover { transform: none; } }
+</style>
+</head>
+
+<body class="bg-background text-on-background antialiased organic-bg">
+
+<!-- Skip link (accessibility) -->
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-primary focus:text-white focus:px-5 focus:py-3 focus:rounded-xl focus:shadow-xl"
+   href="#main-content">Ir para o conteúdo</a>
+
+<!-- ═══════════════════════════════ HEADER ══════════════════════ -->
+<header id="site-header" class="bg-[rgba(251,249,246,0.92)] backdrop-blur-md sticky top-0 z-50 shadow-[0_1px_0_0_rgba(195,200,192,0.4)]">
+  <div class="flex items-center justify-between w-full max-w-[1140px] mx-auto"
+       style="padding: 0.75rem var(--s-section-h);">
+
+    <a aria-label="Início — Mariana Ferreira" href="#" class="shrink-0">
+      <img alt="Mariana Ferreira" src="./assets/mf-submarca.png"
+           class="h-10 w-auto md:h-14" width="112" height="56"/>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Navegação principal">
+      <a class="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold text-on-surface-variant hover:text-primary transition-colors duration-250 py-2"
+         href="#dicas-rapidas">Reflexão</a>
+      <a class="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold text-on-surface-variant hover:text-primary transition-colors duration-250 py-2"
+         href="#sobre">Sobre</a>
+      <a class="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold text-on-surface-variant hover:text-primary transition-colors duration-250 py-2"
+         href="#servicos">Serviços</a>
+      <a class="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold text-on-surface-variant hover:text-primary transition-colors duration-250 py-2"
+         href="#contato">Contato</a>
+    </nav>
+
+    <!-- Desktop CTA -->
+    <a class="hidden md:inline-flex btn-primary shadow-lg shadow-primary/20"
+       href="https://wa.me/5511917714886" target="_blank" rel="noopener noreferrer">
+      Agendar Consulta
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button id="menu-btn"
+            class="md:hidden text-primary touch-target p-2 rounded-xl hover:bg-primary/5 transition-colors"
+            aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span id="icon-menu"  class="material-symbols-outlined text-[26px]">menu</span>
+      <span id="icon-close" class="material-symbols-outlined text-[26px] hidden">close</span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <nav class="flex flex-col border-t border-outline-variant/20"
+         style="padding: 0.5rem var(--s-section-h) 1.5rem;">
+      <a class="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold text-on-surface-variant hover:text-primary transition-colors py-3.5 border-b border-outline-variant/15"
+         href="#dicas-rapidas">Espaço de Reflexão</a>
+      <a class="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold text-on-surface-variant hover:text-primary transition-colors py-3.5 border-b border-outline-variant/15"
+         href="#sobre">Sobre</a>
+      <a class="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold text-on-surface-variant hover:text-primary transition-colors py-3.5 border-b border-outline-variant/15"
+         href="#servicos">Serviços</a>
+      <a class="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold text-on-surface-variant hover:text-primary transition-colors py-3.5"
+         href="#contato">Contato</a>
+      <a class="btn-primary mt-4 w-full" href="https://wa.me/5511917714886" target="_blank" rel="noopener noreferrer">
+        Agendar Consulta
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════ MAIN ════════════════════════ -->
+<main id="main-content">
+
+<!-- ─── HERO ──────────────────────────────────────────────────── -->
+<section class="relative flex items-center overflow-hidden bg-background"
+         style="padding: clamp(2.5rem,6vw,5rem) var(--s-section-h) clamp(3rem,7vw,5.5rem); min-height: clamp(600px, 90svh, 920px);">
+  <div class="mf-floral-watermark -left-10 bottom-0"></div>
+
+  <div class="max-w-[1140px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-center">
+
+    <!-- Copy column: badge + headline + sub + [mobile foto] + botões -->
+    <div class="z-10 fade-up flex flex-col gap-4 md:gap-6">
+
+      <!-- Badge -->
+      <span class="inline-block self-start px-4 py-2 rounded-full bg-[#E1E8EB] text-secondary font-sans font-semibold uppercase tracking-[0.1em]"
+            style="font-size: var(--t-label);">
+        Psicologia Clínica · TCC · Terapia Familiar
+      </span>
+
+      <!-- Headline -->
+      <h1 class="font-serif text-primary leading-[1.12]" style="font-size: var(--t-display); letter-spacing: -0.015em;">
+        Um espaço seguro para sua jornada de
+        <em class="text-tertiary-container not-italic"> autoconhecimento e em busca de uma vida com mais sentido e presença.</em>
+      </h1>
+
+      <!-- Sub -->
+      <p class="font-sans text-on-surface-variant leading-relaxed max-w-[480px]" style="font-size: var(--t-body);">
+        Acompanhamento clínico fundamentado em ciência, ética e presença. Para pessoas que desejam amadurecer emocionalmente, fortalecer relações e viver com mais verdade e profundidade.
+      </p>
+
+      <!-- Foto mobile (paisagem, compacta) — oculta no desktop -->
+      <div class="md:hidden w-full overflow-hidden ambient-shadow"
+           style="aspect-ratio: 3/2; border-radius: 20px;">
+        <img alt="Retrato de Mariana Ferreira, psicóloga clínica"
+             src="./assets/mariana-hero-web.jpg"
+             class="w-full h-full object-cover object-top"
+             width="600" height="400"
+             fetchpriority="high"/>
+      </div>
+
+      <!-- Botões -->
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a class="btn-primary shadow-lg shadow-primary/20"
+           href="https://wa.me/5511917714886" target="_blank" rel="noopener noreferrer">
+          Iniciar Jornada
+        </a>
+        <a class="btn-outline" href="#sobre">Conheça Mariana</a>
+      </div>
+    </div>
+
+    <!-- Foto desktop (retrato, coluna direita) — oculta no mobile -->
+    <div class="hidden md:flex justify-center fade-up delay-2">
+      <div class="w-full overflow-hidden ambient-shadow-lg"
+           style="
+             max-width: 480px;
+             aspect-ratio: 4/5;
+             border-radius: clamp(48px, 10vw, 130px) clamp(48px, 10vw, 130px) 24px 24px;
+           ">
+        <img alt="Retrato de Mariana Ferreira, psicóloga clínica"
+             src="./assets/mariana-hero-web.jpg"
+             class="w-full h-full object-cover object-top"
+             width="600" height="750"
+             fetchpriority="high"/>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── REFLEXÃO (CAROUSEL) ───────────────────────────────────── -->
+<section class="bg-surface-container-low overflow-hidden relative" id="dicas-rapidas"
+         style="padding: var(--s-section-v) 0;">
+  <div class="absolute inset-0 bg-gradient-to-b from-background to-surface-container-low opacity-50 pointer-events-none"></div>
+  <div class="mf-logo-watermark right-[-80px] top-8"></div>
+
+  <!-- Header -->
+  <div class="max-w-[1140px] mx-auto relative z-10 fade-up"
+       style="padding: 0 var(--s-section-h) clamp(2rem,4vw,3rem);">
+    <h2 class="font-serif text-primary" style="font-size: var(--t-h1);">Espaço de reflexão</h2>
+    <div class="h-px w-20 bg-tertiary-container/50 mt-3 mb-4"></div>
+    <p class="font-sans text-on-surface-variant max-w-xl" style="font-size: var(--t-body);">
+      Vídeos breves para acolher pensamentos, emoções e pequenas pausas de cuidado ao longo do dia.
+    </p>
+  </div>
+
+  <!-- Track -->
+  <div class="reflection-carousel" style="padding-bottom: 4px;">
+    <div class="reflection-track" style="padding: 4px 0 16px clamp(1.25rem,7vw,6.25rem);">
+
+      <!-- Card macro -->
+      <!-- Card 1 -->
+      <article class="flex-none w-[280px] md:w-[360px] group cursor-pointer">
+        <div class="relative rounded-[20px] overflow-hidden ambient-shadow mb-4" style="aspect-ratio:4/3;">
+          <img alt="Como lidar com a ansiedade no trabalho"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=70"
+               loading="lazy" width="800" height="600"/>
+          <div class="absolute inset-0 flex items-center justify-center bg-primary/5 transition-colors duration-300 group-hover:bg-black/12">
+            <div class="flex items-center justify-center bg-white/90 backdrop-blur-md rounded-full shadow-lg transition-transform duration-400 group-hover:scale-110" style="width:52px;height:52px;">
+              <span class="material-symbols-outlined text-primary" style="font-size:30px;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2 px-1">
+          <span class="inline-block px-3 py-1 bg-[#F5E6E8] text-tertiary rounded-full font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:11px;">Bem-estar</span>
+          <h4 class="font-serif text-primary leading-snug group-hover:text-tertiary transition-colors duration-250" style="font-size:clamp(1.05rem,1.5vw+0.65rem,1.35rem);">Como lidar com a ansiedade no trabalho</h4>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="flex-none w-[280px] md:w-[360px] group cursor-pointer">
+        <div class="relative rounded-[20px] overflow-hidden ambient-shadow mb-4" style="aspect-ratio:4/3;">
+          <img alt="A importância das pausas conscientes"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=70"
+               loading="lazy" width="800" height="600"/>
+          <div class="absolute inset-0 flex items-center justify-center bg-primary/5 transition-colors duration-300 group-hover:bg-black/12">
+            <div class="flex items-center justify-center bg-white/90 backdrop-blur-md rounded-full shadow-lg transition-transform duration-400 group-hover:scale-110" style="width:52px;height:52px;">
+              <span class="material-symbols-outlined text-primary" style="font-size:30px;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2 px-1">
+          <span class="inline-block px-3 py-1 bg-[#E1E8EB] text-secondary rounded-full font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:11px;">Rotina</span>
+          <h4 class="font-serif text-primary leading-snug group-hover:text-tertiary transition-colors duration-250" style="font-size:clamp(1.05rem,1.5vw+0.65rem,1.35rem);">A importância das pausas conscientes</h4>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="flex-none w-[280px] md:w-[360px] group cursor-pointer">
+        <div class="relative rounded-[20px] overflow-hidden ambient-shadow mb-4" style="aspect-ratio:4/3;">
+          <img alt="O poder de dizer não com gentileza"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               src="https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?auto=format&fit=crop&w=800&q=70"
+               loading="lazy" width="800" height="600"/>
+          <div class="absolute inset-0 flex items-center justify-center bg-primary/5 transition-colors duration-300 group-hover:bg-black/12">
+            <div class="flex items-center justify-center bg-white/90 backdrop-blur-md rounded-full shadow-lg transition-transform duration-400 group-hover:scale-110" style="width:52px;height:52px;">
+              <span class="material-symbols-outlined text-primary" style="font-size:30px;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2 px-1">
+          <span class="inline-block px-3 py-1 bg-[#F5E6E8] text-tertiary rounded-full font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:11px;">Reflexão</span>
+          <h4 class="font-serif text-primary leading-snug group-hover:text-tertiary transition-colors duration-250" style="font-size:clamp(1.05rem,1.5vw+0.65rem,1.35rem);">O poder de dizer não com gentileza</h4>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="flex-none w-[280px] md:w-[360px] group cursor-pointer">
+        <div class="relative rounded-[20px] overflow-hidden ambient-shadow mb-4" style="aspect-ratio:4/3;">
+          <img alt="Como perceber seus sinais internos"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?auto=format&fit=crop&w=800&q=70"
+               loading="lazy" width="800" height="600"/>
+          <div class="absolute inset-0 flex items-center justify-center bg-primary/5 transition-colors duration-300 group-hover:bg-black/12">
+            <div class="flex items-center justify-center bg-white/90 backdrop-blur-md rounded-full shadow-lg transition-transform duration-400 group-hover:scale-110" style="width:52px;height:52px;">
+              <span class="material-symbols-outlined text-primary" style="font-size:30px;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2 px-1">
+          <span class="inline-block px-3 py-1 bg-[#E1E8EB] text-secondary rounded-full font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:11px;">Autocuidado</span>
+          <h4 class="font-serif text-primary leading-snug group-hover:text-tertiary transition-colors duration-250" style="font-size:clamp(1.05rem,1.5vw+0.65rem,1.35rem);">Como perceber seus sinais internos</h4>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="flex-none w-[280px] md:w-[360px] group cursor-pointer">
+        <div class="relative rounded-[20px] overflow-hidden ambient-shadow mb-4" style="aspect-ratio:4/3;">
+          <img alt="Nomear o que sente também é cuidado"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=70"
+               loading="lazy" width="800" height="600"/>
+          <div class="absolute inset-0 flex items-center justify-center bg-primary/5 transition-colors duration-300 group-hover:bg-black/12">
+            <div class="flex items-center justify-center bg-white/90 backdrop-blur-md rounded-full shadow-lg transition-transform duration-400 group-hover:scale-110" style="width:52px;height:52px;">
+              <span class="material-symbols-outlined text-primary" style="font-size:30px;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2 px-1">
+          <span class="inline-block px-3 py-1 bg-[#F5E6E8] text-tertiary rounded-full font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:11px;">Emoções</span>
+          <h4 class="font-serif text-primary leading-snug group-hover:text-tertiary transition-colors duration-250" style="font-size:clamp(1.05rem,1.5vw+0.65rem,1.35rem);">Nomear o que sente também é cuidado</h4>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="flex-none w-[280px] md:w-[360px] group cursor-pointer">
+        <div class="relative rounded-[20px] overflow-hidden ambient-shadow mb-4" style="aspect-ratio:4/3;">
+          <img alt="Um exercício simples para voltar ao agora"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=70"
+               loading="lazy" width="800" height="600"/>
+          <div class="absolute inset-0 flex items-center justify-center bg-primary/5 transition-colors duration-300 group-hover:bg-black/12">
+            <div class="flex items-center justify-center bg-white/90 backdrop-blur-md rounded-full shadow-lg transition-transform duration-400 group-hover:scale-110" style="width:52px;height:52px;">
+              <span class="material-symbols-outlined text-primary" style="font-size:30px;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2 px-1">
+          <span class="inline-block px-3 py-1 bg-[#E1E8EB] text-secondary rounded-full font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:11px;">Presença</span>
+          <h4 class="font-serif text-primary leading-snug group-hover:text-tertiary transition-colors duration-250" style="font-size:clamp(1.05rem,1.5vw+0.65rem,1.35rem);">Um exercício simples para voltar ao agora</h4>
+        </div>
+      </article>
+
+    </div><!-- /reflection-track -->
+  </div><!-- /reflection-carousel -->
+
+  <!-- Mobile scroll dots (decorative hint) -->
+  <div class="md:hidden flex justify-center gap-1.5 mt-3 pb-1" aria-hidden="true">
+    <span class="block w-5 h-1.5 rounded-full bg-primary/40"></span>
+    <span class="block w-2 h-1.5 rounded-full bg-outline-variant"></span>
+    <span class="block w-2 h-1.5 rounded-full bg-outline-variant"></span>
+    <span class="block w-2 h-1.5 rounded-full bg-outline-variant"></span>
+  </div>
+</section>
+
+<!-- ─── SOBRE ──────────────────────────────────────────────────── -->
+<section class="bg-surface relative" id="sobre"
+         style="padding: var(--s-section-v) var(--s-section-h);">
+  <div class="mf-logo-watermark -left-16 top-16"></div>
+
+  <div class="max-w-[1140px] mx-auto relative">
+    <!-- Decorative bg block (desktop only) -->
+    <div class="hidden md:block absolute top-8 right-0 w-[62%] bottom-8 bg-surface-container rounded-[36px] -z-10"></div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-14 items-start">
+
+      <!-- Photo -->
+      <div class="md:col-span-5 relative md:sticky md:top-28 fade-up">
+        <div class="relative overflow-hidden ambient-shadow-lg"
+             style="
+               aspect-ratio: 4/5;
+               border-radius: clamp(20px, 4vw, 36px);
+               max-width: min(100%, 400px);
+               margin: 0 auto;
+             ">
+          <img alt="Mariana Ferreira, psicóloga clínica, em consultório"
+               src="./assets/mariana-sobre-web.jpg"
+               class="w-full h-full object-cover object-top"
+               loading="lazy" width="600" height="750"/>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="md:col-span-7 space-y-5 md:space-y-6 md:pr-6 md:py-6 fade-up delay-1">
+        <div>
+          <h2 class="font-serif text-primary" style="font-size: var(--t-h1);">Sobre Mim</h2>
+          <div class="h-px w-20 bg-tertiary-container/50 mt-3"></div>
+        </div>
+
+        <!-- Intro — always visible -->
+        <p class="font-sans text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+          Acredito que a vida não pede perfeição — pede presença e um olhar atento a si e ao mundo. E foi entendendo isso, primeiro na minha própria história, que encontrei meu caminho na Psicologia.
+        </p>
+        <p class="font-sans text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+          Sou uma mulher de fé, esposa, mãe e psicóloga clínica. Minha vida pessoal e profissional caminham juntas, atravessadas pela busca por virtudes, maturidade emocional, sentido e construção diária. Não acredito em soluções prontas nem em fórmulas mágicas. Acredito em processos — reais, imperfeitos e profundamente transformadores.
+        </p>
+
+        <!-- Expandable on mobile -->
+        <div class="sobre-extra" id="sobre-extra">
+          <div class="space-y-5">
+            <p class="font-sans text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+              Minha prática clínica é fundamentada em ciência psicológica, em estudo constante e na responsabilidade ética que a profissão exige. Acredito que fé e ciência não se anulam — podem caminhar juntas quando há maturidade, respeito e compromisso com o cuidado humano.
+            </p>
+            <p class="font-sans text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+              Venho de uma família batalhadora, onde aprendi sobre amor, apoio, limites, imperfeições humanas e a importância de ter um lar emocional seguro. As vivências de dor e sofrimentos atravessados na minha trajetória ampliaram ainda mais minha compreensão sobre processos, finitude, luto, esperança e fé. E hoje, isso atravessa minha escuta clínica com respeito, delicadeza e responsabilidade.
+            </p>
+            <p class="font-sans text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+              Acredito também na leveza. No humor. Na alegria possível, mesmo quando a vida nos atravessa com dor. Para mim, maturidade emocional não significa viver sério o tempo todo — significa sustentar a vida com profundidade sem perder a capacidade de sorrir, recomeçar e encontrar sentido no caminho.
+            </p>
+            <p class="font-sans text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+              Antes da Psicologia, trilhei o Direito. Finalizei ambos simultaneamente. Mas foi ao entrar em contato com a escuta e as dificuldades humanas que reconheci meu propósito: caminhar ao lado de pessoas em seus processos de crescimento, dor, reconstrução e amadurecimento.
+            </p>
+            <p class="font-sans text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+              Hoje meu trabalho é voltado para minha paixão pelo desenvolvimento pessoal, acompanhando principalmente mulheres adultas — muitas vezes fortes por fora e sobrecarregadas por dentro. Mulheres que desejam amadurecer emocionalmente, fortalecer relações, viver a maternidade com mais equilíbrio, melhorar a autoestima e construir uma vida com mais sentido, presença e verdade.
+            </p>
+          </div>
+        </div>
+
+        <!-- Read-more toggle (mobile only) -->
+        <button id="sobre-toggle"
+                aria-expanded="false" aria-controls="sobre-extra"
+                class="flex items-center gap-2 text-primary font-sans font-semibold uppercase tracking-[0.1em] border border-outline-variant px-5 py-3 rounded-full hover:bg-primary/5 transition-colors touch-target"
+                style="font-size: var(--t-label);">
+          <span id="toggle-text">Ler mais</span>
+          <span class="material-symbols-outlined" id="toggle-icon" style="font-size:18px;">expand_more</span>
+        </button>
+
+        <!-- Manifesto card -->
+        <div class="bg-surface-container-low rounded-[18px] md:rounded-[22px] p-6 md:p-8 border-l-4 border-tertiary-container">
+          <p class="font-serif italic text-primary leading-relaxed mb-3" style="font-size:clamp(1rem,1.1vw+0.75rem,1.2rem);">
+            Não prometo soluções rápidas.<br/>Não ofereço respostas prontas.
+          </p>
+          <p class="font-sans text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+            Ofereço presença, escuta qualificada, fundamentação científica, direção e processo.
+          </p>
+        </div>
+
+        <p class="font-sans italic text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+          Porque viver bem não é viver sem desafios. É aprender a atravessá-los com sentido, maturidade e, às vezes, até com um pouco mais de leveza e alegria.
+        </p>
+
+        <!-- Credentials -->
+        <ul class="space-y-3.5 pt-1" role="list">
+          <li class="flex items-start gap-3 group">
+            <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#E1E8EB] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#F5E6E8] transition-colors">
+              <span class="material-symbols-outlined text-primary" style="font-size:17px;">check</span>
+            </div>
+            <span class="font-sans text-on-surface-variant pt-1 leading-snug" style="font-size: var(--t-body);">Pós-graduada em Terapia Cognitivo-Comportamental &amp; Psicologia Clínica Baseada em Evidências</span>
+          </li>
+          <li class="flex items-start gap-3 group">
+            <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#E1E8EB] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#F5E6E8] transition-colors">
+              <span class="material-symbols-outlined text-primary" style="font-size:17px;">check</span>
+            </div>
+            <span class="font-sans text-on-surface-variant pt-1 leading-snug" style="font-size: var(--t-body);">Pós-graduanda em Psicologia Familiar (em curso)</span>
+          </li>
+          <li class="flex items-start gap-3 group">
+            <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#E1E8EB] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#F5E6E8] transition-colors">
+              <span class="material-symbols-outlined text-primary" style="font-size:17px;">check</span>
+            </div>
+            <span class="font-sans text-on-surface-variant pt-1 leading-snug" style="font-size: var(--t-body);">Atendimento ético, humanizado e cientificamente fundamentado</span>
+          </li>
+          <li class="flex items-start gap-3 group">
+            <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#E1E8EB] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#F5E6E8] transition-colors">
+              <span class="material-symbols-outlined text-primary" style="font-size:17px;">check</span>
+            </div>
+            <span class="font-sans text-on-surface-variant pt-1 leading-snug" style="font-size: var(--t-body);">Foco no desenvolvimento pessoal contínuo</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVIÇOS ───────────────────────────────────────────────── -->
+<section class="bg-background relative" id="servicos"
+         style="padding: var(--s-section-v) var(--s-section-h);">
+  <div class="absolute top-0 left-0 w-full h-36 bg-gradient-to-b from-surface to-background pointer-events-none"></div>
+  <div class="mf-floral-watermark right-[-200px] bottom-[-160px] rotate-180 opacity-[0.11]"></div>
+
+  <div class="max-w-[1140px] mx-auto relative z-10">
+    <div class="text-center max-w-xl mx-auto space-y-4 fade-up" style="margin-bottom: clamp(2.5rem,6vw,5rem);">
+      <h2 class="font-serif text-primary" style="font-size: var(--t-h1);">Serviços Oferecidos</h2>
+      <div class="h-px w-20 bg-tertiary-container/50 mx-auto"></div>
+      <p class="font-sans text-on-surface-variant" style="font-size: var(--t-body);">
+        Modalidades de atendimento pensadas para se adaptar à sua necessidade e rotina.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
+
+      <!-- Terapia Individual -->
+      <div class="service-card bg-surface-container-lowest flex flex-col fade-up"
+           style="padding: clamp(1.5rem,3vw,2.5rem); border-radius: clamp(20px,3vw,28px);">
+        <div class="w-14 h-14 rounded-2xl bg-[#E1E8EB] flex items-center justify-center mb-5 shrink-0">
+          <span class="material-symbols-outlined text-secondary" style="font-size:28px;">person</span>
+        </div>
+        <h3 class="font-serif text-primary mb-3" style="font-size: var(--t-h2);">Terapia Individual</h3>
+        <p class="font-sans text-on-surface-variant leading-relaxed flex-1" style="font-size: var(--t-body);">
+          Um espaço exclusivamente seu. Acompanhamento clínico para autoconhecimento, amadurecimento emocional, ansiedade, autoestima, transições de vida e construção de uma existência mais autêntica e significativa.
+        </p>
+        <div class="mt-5 flex gap-2 flex-wrap">
+          <span class="px-3 py-1 bg-primary/5 text-primary rounded-full font-sans font-semibold uppercase tracking-wider" style="font-size:11px;">Ansiedade</span>
+          <span class="px-3 py-1 bg-[#F5E6E8] text-tertiary rounded-full font-sans font-semibold uppercase tracking-wider" style="font-size:11px;">Autoestima</span>
+          <span class="px-3 py-1 bg-[#E1E8EB] text-secondary rounded-full font-sans font-semibold uppercase tracking-wider" style="font-size:11px;">Autoconhecimento</span>
+        </div>
+      </div>
+
+      <!-- Terapia de Casal -->
+      <div class="service-card bg-surface-container flex flex-col border border-surface-container-highest fade-up delay-1"
+           style="padding: clamp(1.5rem,3vw,2.5rem); border-radius: clamp(20px,3vw,28px);">
+        <div class="w-14 h-14 rounded-2xl bg-[#F5E6E8] flex items-center justify-center mb-5 shrink-0">
+          <span class="material-symbols-outlined text-tertiary" style="font-size:28px;">diversity_1</span>
+        </div>
+        <h3 class="font-serif text-primary mb-3" style="font-size: var(--t-h2);">Terapia de Casal</h3>
+        <p class="font-sans text-on-surface-variant leading-relaxed flex-1" style="font-size: var(--t-body);">
+          Um espaço de escuta para os dois. Acompanhamento especializado para melhorar a comunicação, resolver conflitos, fortalecer vínculos e reconstruir a conexão com empatia e responsabilidade afetiva.
+        </p>
+        <div class="mt-5 flex gap-2 flex-wrap">
+          <span class="px-3 py-1 bg-[#F5E6E8] text-tertiary rounded-full font-sans font-semibold uppercase tracking-wider" style="font-size:11px;">Comunicação</span>
+          <span class="px-3 py-1 bg-primary/5 text-primary rounded-full font-sans font-semibold uppercase tracking-wider" style="font-size:11px;">Vínculos</span>
+        </div>
+      </div>
+
+      <!-- Terapia Familiar -->
+      <div class="service-card bg-surface-container-lowest flex flex-col sm:col-span-2 lg:col-span-1 fade-up delay-2"
+           style="padding: clamp(1.5rem,3vw,2.5rem); border-radius: clamp(20px,3vw,28px);">
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 shrink-0">
+          <span class="material-symbols-outlined text-primary" style="font-size:28px;">family_restroom</span>
+        </div>
+        <h3 class="font-serif text-primary mb-3" style="font-size: var(--t-h2);">Terapia Familiar</h3>
+        <p class="font-sans text-on-surface-variant leading-relaxed flex-1" style="font-size: var(--t-body);">
+          Trabalho com o sistema familiar como um todo. Acompanhamento para famílias que enfrentam conflitos, dificuldades de comunicação, crises ou que desejam construir um ambiente emocional mais seguro e saudável para todos.
+        </p>
+        <div class="mt-5 flex gap-2 flex-wrap">
+          <span class="px-3 py-1 bg-[#E1E8EB] text-secondary rounded-full font-sans font-semibold uppercase tracking-wider" style="font-size:11px;">Família</span>
+          <span class="px-3 py-1 bg-primary/5 text-primary rounded-full font-sans font-semibold uppercase tracking-wider" style="font-size:11px;">Contexto</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── DEPOIMENTO ─────────────────────────────────────────────── -->
+<section class="bg-[#f0f2f0] relative overflow-hidden" style="padding: var(--s-section-v) var(--s-section-h);">
+  <div class="mf-logo-watermark right-[2vw] bottom-[-100px] opacity-[0.09]"></div>
+
+  <div class="max-w-[1140px] mx-auto relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-center">
+
+      <div class="fade-up">
+        <h2 class="font-serif text-primary" style="font-size: var(--t-h1);">O impacto do acolhimento</h2>
+        <div class="h-px w-20 bg-tertiary-container/50 mt-3 mb-5"></div>
+        <p class="font-sans text-on-surface-variant leading-relaxed" style="font-size: var(--t-body);">
+          A transformação pessoal é uma jornada íntima. Leia como o espaço terapêutico tem auxiliado pacientes a reescreverem suas histórias com mais leveza.
+        </p>
+      </div>
+
+      <div class="fade-up delay-2">
+        <blockquote class="bg-surface-container-lowest relative overflow-hidden ambient-shadow-lg"
+                    style="padding: clamp(1.5rem,4vw,2.5rem); border-radius: clamp(20px,3vw,28px);">
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#F5E6E8] to-[#E1E8EB]"></div>
+          <span class="font-serif text-tertiary/12 absolute -top-3 left-5 leading-none select-none" style="font-size:clamp(72px,10vw,100px);" aria-hidden="true">"</span>
+          <p class="font-serif italic text-on-surface-variant relative z-10 leading-relaxed"
+             style="font-size:clamp(1.05rem,1.4vw+0.75rem,1.3rem); padding-top: clamp(2rem,4vw,3rem);">
+            Encontrei nas sessões um porto seguro. A Mariana tem uma escuta que vai além das palavras, ela consegue organizar o caos que eu sentia por dentro.
+          </p>
+          <footer class="flex items-center mt-5 pt-4 border-t border-surface-container-highest">
+            <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mr-3 shrink-0">
+              <span class="material-symbols-outlined text-primary" style="font-size:18px;">spa</span>
+            </div>
+            <cite class="font-sans font-semibold text-primary uppercase tracking-[0.1em] not-italic" style="font-size: var(--t-label);">— Paciente F., 32 anos</cite>
+          </footer>
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTATO ────────────────────────────────────────────────── -->
+<section class="bg-surface-container-low relative overflow-hidden" id="contato"
+         style="padding: var(--s-section-v) var(--s-section-h);">
+  <div class="mf-floral-watermark left-[-140px] bottom-[-170px] opacity-[0.15]"></div>
+
+  <div class="max-w-[760px] mx-auto relative fade-up">
+    <div class="bg-surface-container-lowest relative overflow-hidden text-center ambient-shadow-lg"
+         style="border-radius: clamp(24px,4vw,40px); padding: clamp(2rem,6vw,5rem) clamp(1.5rem,5vw,4rem);">
+      <div class="mf-logo-watermark right-[-100px] top-[-100px] opacity-[0.06]"></div>
+
+      <div class="mx-auto bg-[#F5E6E8] rounded-full flex items-center justify-center mb-6 md:mb-8"
+           style="width: clamp(56px,8vw,80px); height: clamp(56px,8vw,80px);">
+        <span class="material-symbols-outlined text-tertiary-container"
+              style="font-size: clamp(28px,4vw,40px);">calendar_month</span>
+      </div>
+
+      <h2 class="font-serif text-primary mb-4" style="font-size: clamp(1.5rem,3vw+0.5rem,2.5rem);">
+        Dê o primeiro passo
+      </h2>
+      <p class="font-sans text-on-surface-variant mx-auto mb-2 leading-relaxed max-w-[480px]"
+         style="font-size: var(--t-body);">
+        Agende sua primeira consulta ou tire suas dúvidas. O atendimento via WhatsApp garante uma resposta rápida, discreta e humanizada.
+      </p>
+      <p class="font-serif italic text-primary mx-auto mb-8 md:mb-10 leading-relaxed max-w-[480px]"
+         style="font-size: clamp(0.95rem, 1vw + 0.8rem, 1.1rem);">
+        Estou em Bragança Paulista, mas posso te atender de onde você estiver.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a class="btn-primary shadow-xl shadow-primary/20 group w-full sm:w-auto"
+           href="https://wa.me/5511917714886" target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined mr-2 group-hover:scale-110 transition-transform" style="font-size:20px;">chat</span>
+          Chamar no WhatsApp
+        </a>
+        <div class="flex items-center text-on-surface-variant font-sans" style="font-size: var(--t-body);">
+          <span class="material-symbols-outlined mr-2 text-secondary p-2 bg-secondary/10 rounded-full" style="font-size:18px;">location_on</span>
+          Bragança Paulista · São Paulo
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ARTIGOS ────────────────────────────────────────────────── -->
+<section class="bg-background relative overflow-hidden" id="blog"
+         style="padding: var(--s-section-v) var(--s-section-h);">
+  <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-background opacity-50 pointer-events-none"></div>
+  <div class="mf-floral-watermark left-[-180px] top-[-100px] opacity-[0.09]"></div>
+
+  <div class="max-w-[1140px] mx-auto relative z-10">
+    <div class="text-center space-y-4 fade-up" style="margin-bottom: clamp(2.5rem,6vw,4rem);">
+      <h2 class="font-serif text-primary" style="font-size: var(--t-h1);">Artigos e Reflexões</h2>
+      <div class="h-px w-20 bg-tertiary-container/50 mx-auto"></div>
+      <p class="font-sans text-on-surface-variant max-w-xl mx-auto" style="font-size: var(--t-body);">
+        Explore conteúdos sobre saúde mental, bem-estar e autoconhecimento, pensados para o seu dia a dia.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+
+      <!-- Card 1 -->
+      <article class="article-card bg-surface-container-lowest cursor-pointer fade-up"
+               style="border-radius: clamp(18px,2.5vw,28px); padding: clamp(1.1rem,2.5vw,1.5rem);">
+        <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/3; border-radius: clamp(10px,1.5vw,16px);">
+          <img alt="Autoconhecimento"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=70"
+               loading="lazy" width="800" height="600"/>
+        </div>
+        <div class="space-y-3 px-1 group">
+          <span class="inline-block px-3 py-1 bg-[#F5E6E8] text-tertiary rounded-full font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:11px;">Autoconhecimento</span>
+          <h3 class="font-serif text-primary group-hover:text-tertiary transition-colors leading-snug" style="font-size:clamp(1.1rem,1.4vw+0.75rem,1.4rem);">A jornada para dentro: Entendendo suas emoções</h3>
+          <p class="font-sans text-on-surface-variant line-clamp-2 leading-relaxed" style="font-size: var(--t-body);">
+            Descubra como o processo de olhar para si mesmo pode transformar a maneira como você se relaciona com o mundo.
+          </p>
+          <div class="pt-2 flex items-center text-primary font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:12px;">
+            <span>Ler artigo</span>
+            <span class="material-symbols-outlined ml-1" style="font-size:16px;">east</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="article-card bg-surface-container-lowest cursor-pointer fade-up delay-1"
+               style="border-radius: clamp(18px,2.5vw,28px); padding: clamp(1.1rem,2.5vw,1.5rem);">
+        <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/3; border-radius: clamp(10px,1.5vw,16px);">
+          <img alt="Bem-estar"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=70"
+               loading="lazy" width="800" height="600"/>
+        </div>
+        <div class="space-y-3 px-1 group">
+          <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:11px;">Bem-estar</span>
+          <h3 class="font-serif text-primary group-hover:text-tertiary transition-colors leading-snug" style="font-size:clamp(1.1rem,1.4vw+0.75rem,1.4rem);">5 hábitos diários para reduzir a ansiedade</h3>
+          <p class="font-sans text-on-surface-variant line-clamp-2 leading-relaxed" style="font-size: var(--t-body);">
+            Pequenas mudanças na sua rotina podem gerar grandes impactos na sua saúde mental e equilíbrio emocional.
+          </p>
+          <div class="pt-2 flex items-center text-primary font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:12px;">
+            <span>Ler artigo</span>
+            <span class="material-symbols-outlined ml-1" style="font-size:16px;">east</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="article-card bg-surface-container-lowest cursor-pointer sm:col-span-2 lg:col-span-1 fade-up delay-2"
+               style="border-radius: clamp(18px,2.5vw,28px); padding: clamp(1.1rem,2.5vw,1.5rem);">
+        <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/3; border-radius: clamp(10px,1.5vw,16px);">
+          <img alt="Relacionamentos"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=800&q=70"
+               loading="lazy" width="800" height="600"/>
+        </div>
+        <div class="space-y-3 px-1 group">
+          <span class="inline-block px-3 py-1 bg-[#E1E8EB] text-secondary rounded-full font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:11px;">Relacionamentos</span>
+          <h3 class="font-serif text-primary group-hover:text-tertiary transition-colors leading-snug" style="font-size:clamp(1.1rem,1.4vw+0.75rem,1.4rem);">Comunicação não-violenta no dia a dia</h3>
+          <p class="font-sans text-on-surface-variant line-clamp-2 leading-relaxed" style="font-size: var(--t-body);">
+            Como expressar suas necessidades de forma clara e empática para fortalecer os vínculos com as pessoas que você ama.
+          </p>
+          <div class="pt-2 flex items-center text-primary font-sans font-semibold uppercase tracking-[0.1em]" style="font-size:12px;">
+            <span>Ler artigo</span>
+            <span class="material-symbols-outlined ml-1" style="font-size:16px;">east</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════ FOOTER ══════════════════════ -->
+<footer class="bg-[#e9ece9] border-t border-outline-variant/20 relative overflow-hidden"
+        style="padding: clamp(2.5rem,6vw,5rem) var(--s-section-h);">
+  <div class="mf-logo-watermark left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.05]"></div>
+
+  <div class="max-w-[1140px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-start relative z-10">
+
+    <div class="flex flex-col items-center md:items-start gap-2">
+      <span class="font-serif italic text-primary" style="font-size: clamp(1.4rem,2vw,2rem);">Mariana Ferreira</span>
+      <p class="font-sans text-on-surface-variant text-center md:text-left" style="font-size: var(--t-body);">Psicoterapia Clínica em TCC</p>
+    </div>
+
+    <div class="flex flex-col items-center gap-2">
+      <a class="flex items-center gap-3 font-sans text-on-surface-variant hover:text-primary transition-colors touch-target px-2"
+         href="https://wa.me/5511917714886" target="_blank" rel="noopener noreferrer" style="font-size: var(--t-body);">
+        <span class="material-symbols-outlined text-primary" style="font-size:20px;">chat</span>
+        (11) 91771-4886
+      </a>
+      <a class="flex items-center gap-3 font-sans text-on-surface-variant hover:text-primary transition-colors touch-target px-2"
+         href="mailto:psimarifderico@gmail.com" style="font-size: var(--t-body);">
+        <span class="material-symbols-outlined text-primary" style="font-size:20px;">mail</span>
+        psimarifderico@gmail.com
+      </a>
+      <a class="flex items-center gap-3 font-sans text-on-surface-variant hover:text-primary transition-colors touch-target px-2"
+         href="https://instagram.com/marideferrico" target="_blank" rel="noopener noreferrer" style="font-size: var(--t-body);">
+        <span class="material-symbols-outlined text-primary" style="font-size:20px;">photo_camera</span>
+        @marideferrico
+      </a>
+    </div>
+
+    <div class="flex flex-col items-center md:items-end gap-1.5">
+      <p class="font-sans text-on-surface-variant" style="font-size: 13px;">© 2026 Mariana Ferreira.</p>
+      <p class="font-sans font-semibold text-primary/70 uppercase tracking-[0.1em]" style="font-size: 11px;">CRP 06/188486</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── FAB WhatsApp (mobile) ──────────────────────────────────── -->
+<div class="md:hidden fixed bottom-5 right-4 z-50">
+  <a class="bg-primary text-white rounded-full flex items-center justify-center shadow-xl shadow-primary/35 hover:bg-surface-tint hover:scale-105 active:scale-95 transition-all duration-250"
+     href="https://wa.me/5511917714886" target="_blank" rel="noopener noreferrer"
+     aria-label="Chamar no WhatsApp"
+     style="width:56px; height:56px;">
+    <span class="material-symbols-outlined" style="font-size:26px;">chat</span>
+  </a>
+</div>
+
+<!-- ═══════════════════════════════ SCRIPTS ══════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Header hide-on-scroll ──────────────────────────────────── */
+  const header = document.getElementById('site-header');
+  let lastY = window.scrollY, ticking = false;
+  function onScroll() {
+    const cur = window.scrollY;
+    const past = cur > header.offsetHeight + 20;
+    const down = cur > lastY;
+    header.classList.toggle('-translate-y-full', down && past);
+    lastY = Math.max(cur, 0);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+  }, { passive: true });
+
+  /* ── Mobile menu ────────────────────────────────────────────── */
+  const menuBtn  = document.getElementById('menu-btn');
+  const mMenu    = document.getElementById('mobile-menu');
+  const iMenu    = document.getElementById('icon-menu');
+  const iClose   = document.getElementById('icon-close');
+
+  function toggleMenu(force) {
+    const open = force !== undefined ? force : !mMenu.classList.contains('open');
+    mMenu.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    iMenu.classList.toggle('hidden', open);
+    iClose.classList.toggle('hidden', !open);
+  }
+
+  menuBtn.addEventListener('click', function () { toggleMenu(); });
+  mMenu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { toggleMenu(false); });
+  });
+
+  /* ── Carousel: clone cards for desktop infinite scroll ──────── */
+  document.querySelectorAll('.reflection-track').forEach(function (track) {
+    var originals = Array.from(track.children);
+    originals.forEach(function (card) {
+      var clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+  });
+
+  /* ── Scroll-triggered fade-up (IntersectionObserver) ───────── */
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reducedMotion) {
+    document.querySelectorAll('.fade-up').forEach(function (el) {
+      el.classList.add('in');
+    });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(function (el) {
+      io.observe(el);
+    });
+  }
+
+  /* ── "Sobre" read-more toggle ───────────────────────────────── */
+  var sobreToggle = document.getElementById('sobre-toggle');
+  var sobreExtra  = document.getElementById('sobre-extra');
+  var toggleText  = document.getElementById('toggle-text');
+  var toggleIcon  = document.getElementById('toggle-icon');
+
+  if (sobreToggle && sobreExtra) {
+    sobreToggle.addEventListener('click', function () {
+      var expanded = sobreExtra.classList.toggle('expanded');
+      sobreToggle.setAttribute('aria-expanded', String(expanded));
+      toggleText.textContent = expanded ? 'Ver menos' : 'Ler mais';
+      toggleIcon.textContent = expanded ? 'expand_less' : 'expand_more';
+    });
+  }
+
+  /* ── Article card: propagate group-hover via JS (touch-safe) ── */
+  document.querySelectorAll('.article-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var h3 = card.querySelector('h3');
+      if (h3) h3.classList.add('text-tertiary');
+      setTimeout(function () {
+        if (h3) h3.classList.remove('text-tertiary');
+      }, 400);
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
